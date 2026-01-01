@@ -50,9 +50,13 @@ public class Main {
                         executable.execute(blockchain);
 
                         cachedCommands.putIfAbsent(cmdAlias, executable);
+                        return;
                     }
                 }
             }
+
+            System.out.println("Sorry, your command \"" + cmd + "\" is invalid.");
+            System.out.println("Try \"help\".");
         }
         catch (Exception e) {
             System.out.println(e.getMessage());

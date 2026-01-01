@@ -11,6 +11,9 @@ public class ShowPendingCommand implements Executable {
     @Override
     public void execute(Blockchain blockchain) {
         List<Transaction> txs = blockchain.getPendingTransactions();
+        if (txs.isEmpty()) {
+            System.out.println("There are no pending transactions.");
+        }
         for (Transaction tx : txs) {
             System.out.println(tx);
         }
